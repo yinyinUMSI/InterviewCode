@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>A Web Page</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="js/effect.js"></script>
+	<script src="js/getData.js"></script>
+</head>
+
+<!-- list view:
+	top bar with list and create
+	a list of emails with address and brief of content
+	bottom bar with delete button -->
+<body>
+	<!-- top bar begins-->
+	<div class="topBar">
+		<div class="topTab currentTab" id="listView">LIST</div>
+		<div class="topTab" id="createView">CREATE</div>
+	</div>
+	<!-- top bar ends-->
+
+	<!-- email list begins-->
+	<div class="emailList">
+	</div>
+	<!-- email list ends-->
+
+	<!-- bottom bar begins-->
+	<div class="bottomBar">
+		<button id="deleteButton">DELETE</button>
+	</div>
+	<!-- bottom bar ends-->
+</body>
+</html>
