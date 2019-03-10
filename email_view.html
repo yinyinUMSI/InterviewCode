@@ -3,28 +3,42 @@
 <head>
 	<title>A Web Page</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="js/effect.js"></script>
+	<script src="js/getData.js"></script>
 	<script src="js/getDataIndEmail.js"></script>
 </head>
 
+<!-- email_view:
+	show the sender, subject and content
+	request API
+	prev,next button -->
+	
 <body>
 	<div class="topBar">
-		<div class="topTab" id="listView">LIST</div>
+		<div class="topTab" id="listView" style="border-right: 1px solid grey;">LIST</div>
 		<div class="topTab" id="createView">CREATE</div>
 	</div>
 	
 	<div class="emailWhole">
-		To: 
-		<div class="sendTo">	
+		<div class="sendToGroup">
+			<span>To: </span>
+			<span class="sendTo"></span>
 		</div>
-		Subject:
-		<div class="subject">
+
+		<div class="subjectGroup">
+			<span>Subject:</span>
+			<span class="subject"></span>
 		</div>
-		<div class="emailContent">
-			
+		
+		<div class="emailContent">		
 		</div>
 	</div>
 
+	<div class="buttonGroup">
+		<button id="prevButton">PREV</button>
+		<button id="nextButton">NEXT</button>
+	</div>
 </body>
 </html>

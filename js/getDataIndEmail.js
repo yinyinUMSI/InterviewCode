@@ -1,16 +1,32 @@
+identify the url parameter to decide what to show
+show "from" "subject" "content"
+
 $(function() {
-	var para = parseInt(getUrlParam("id"))+1;
+	var para = parseInt(getUrlParam("id"));
+	getDataFrom(para+1);
+	
+	$("#prevButton").on('click', function() {
+		var prevId = (para-1)>0 ? para-1: 14;
+		window.location.href = "email_view.html?id="+ prevId.toString();
+	});
+	$("#nextButton").on('click', function() {
+		var nextId = (para+1)<=14 ? para+1: 0;
+		window.location.href = "email_view.html?id="+ nextId.toString();
+	});
+})
+
+function getDataFrom(para) {
 	$.ajax({
-		url: 'https://5c5a21f9af3ff700140de477.mockapi.io/api/email/'+ para.toString(),
+		url: URL + '/' + para.toString(),
 		type: 'GET',
 		beforeSend: alertLoading,
 		error: alertError,
 		success: showIndEmail, 
 	})
-})
+}
 
 function getUrlParam(name) {
-	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); 
+	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i"); 
 	var r = window.location.search.substr(1).match(reg); 
 	if (r != null) 
 		return unescape(r[2]); 
@@ -27,14 +43,6 @@ function alertError() {
 
 function showIndEmail(data) {
 	$(".sendTo").empty();
-	// var newDiv = $("<div class='emailIndiv'></div>").appendTo($(".emailList"));
-	// newDiv.attr("id","email"+i.toString());
-	// newDiv.append("<input class='checkBox' type='checkbox'>");
-	// var fromSpan = $("<span class='emailFrom'></span>").appendTo(newDiv);
-	// fromSpan.text(data[i].from);
-	// var subjectSpan = $("<span class='emailSubject'></span>").appendTo(newDiv);
-	// subjectSpan.text(data[i].subject);
-		// newDiv.append("<span class='emailSubject'></span>");
 	$(".sendTo").text(data.from);
 	$(".subject").text(data.subject);
 	$(".emailContent").text(data.text);	

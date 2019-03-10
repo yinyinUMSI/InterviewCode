@@ -3,29 +3,39 @@
 <head>
 	<title>A Web Page</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="js/effect.js"></script>
 </head>
 
+<!-- create_view: 
+	compose an email with receiver, subject and content
+	send button -->
+	
 <body>
 	<div class="topBar">
 		<div class="topTab" id="listView">LIST</div>
 		<div class="topTab currentTab" id="createView">CREATE</div>
 	</div>
+
 	<form>
 		<div class="emailWhole">
-			<div class="sendTo">
-				To: <input type="email">
+			<div class="sendToGroup">
+				To: <input type="email" style="width: 158px;">
 			</div>
-			<div class="subject">
+
+			<div class="subjectGroup">
 				Subject: <input type="email">
-</div>
+			</div>
+
 			<div class="emailContent">
 				<textarea placeholder="Type your message here"></textarea>
 			</div>
+
 			<div class="sendButton">
-				<button type="submit">SEND</button>
+				<button id="sendButton">SEND</button>
 			</div>
+			
 		</div>
 	</form>
 </body>
