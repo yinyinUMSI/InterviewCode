@@ -5,13 +5,13 @@
 
 $(function() {
 	$("#listView").on('click', function() {
-		window.location="list_view.html";
+		window.location="index.html";
 	});
 	$("#createView").on('click', function() {
 		window.location="create_view.html";
 	});
 	$(".sendButton").on('click', "#sendButton", function() {
 		window.event.returnValue=false;		
-		window.location="list_view.html";
+		window.location="index.html";
 	});
 })
