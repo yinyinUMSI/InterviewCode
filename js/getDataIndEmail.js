@@ -1,5 +1,5 @@
-identify the url parameter to decide what to show
-show "from" "subject" "content"
+// identify the url parameter to decide what to show
+// show "from" "subject" "content"
 
 $(function() {
 	var para = parseInt(getUrlParam("id"));
